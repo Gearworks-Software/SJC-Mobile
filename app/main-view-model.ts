@@ -1,38 +1,18 @@
-import { Observable } from '@nativescript/core'
+import { Observable } from "@nativescript/core";
 
-export class HelloWorldModel extends Observable {
-  private _counter: number
-  private _message: string
+export function onNavigatingTo(args) {
+    const page = args.object;
+    page.bindingContext = new MainViewModel();
+}
 
-  constructor() {
-    super()
-
-    // Initialize default values.
-    this._counter = 42
-    this.updateMessage()
-  }
-
-  get message(): string {
-    return this._message
-  }
-
-  set message(value: string) {
-    if (this._message !== value) {
-      this._message = value
-      this.notifyPropertyChange('message', value)
+class MainViewModel extends Observable {
+    constructor() {
+        super();
     }
-  }
 
-  onTap() {
-    this._counter--
-    this.updateMessage()
-  }
-
-  private updateMessage() {
-    if (this._counter <= 0) {
-      this.message = 'Hoorraaay! You unlocked the NativeScript clicker achievement!'
-    } else {
-      this.message = `${this._counter} taps left`
+    onLoginTap() {
+        console.log("Login button tapped");
+        //TODO - Validation Logic
+        alert("Login attempt made.");
     }
-  }
 }

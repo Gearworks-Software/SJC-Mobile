@@ -1,0 +1,15 @@
+<Page class="page" xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="SJC-JC Home" class="action-bar" />
+
+    <ScrollView>
+        <StackLayout class="home-container" verticalAlignment="top" horizontalAlignment="center">
+            <Label text="Welcome to the SJC-JC App!" class="welcome" />
+            <Label text="Select a feature to begin:" class="subtitle" />
+
+            <Button text="Profile" class="btn btn-primary" />
+            <Button text="Courses" class="btn btn-primary" />
+            <Button text="Campus Map" class="btn btn-primary" />
+            <Button text="Events Calendar" class="btn btn-primary" />
+        </StackLayout>
+    </ScrollView>
+</Page>
