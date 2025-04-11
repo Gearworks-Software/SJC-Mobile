@@ -5,7 +5,7 @@ export function onNavigatingTo(args) {
     page.bindingContext = new MainViewModel();
 }
 
-class MainViewModel extends Observable {
+export class MainViewModel extends Observable {
     constructor() {
         super();
     }
