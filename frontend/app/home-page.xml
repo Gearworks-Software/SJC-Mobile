@@ -10,6 +10,7 @@
             <Button text="Courses" class="btn btn-primary" />
             <Button text="Campus Map" class="btn btn-primary" />
             <Button text="Events Calendar" class="btn btn-primary" />
+            <!-- TODO, add Communication Tools, Notification Alerts, Cafeteria Menu, Academic Resources (tutorials, videos, etc), Counselling, Student organization, transport service, feedback -->
         </StackLayout>
     </ScrollView>
 </Page>
