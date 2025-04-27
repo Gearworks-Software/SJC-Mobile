@@ -1,1 +1,12 @@
+<GridLayout>
+    <StackLayout>
+        <Label text="Event Calendar" class="h2" horizontalAlignment="center"/>
+        
+        <ListView id="calendar" items="{{ calendarItems }}" class="calendar-list">
+            <ng-template let-item="item">
+                <Label text="{{ item.date }}" class="calendar-item"/>
+            </ng-template>
+        </ListView>
+    </StackLayout>
+</GridLayout>
 
