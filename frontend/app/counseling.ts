@@ -1,43 +1,32 @@
-import { EventData, Observable } from '@nativescript/core';
+import { EventData, Page } from '@nativescript/core';
+import { CounselingViewModel } from './counseling-view-model';
 
-export class Counseling extends Observable {
-    public counselingSessions: Array<any> = [];
-    public showBookingForm: boolean = false;
-    public sessionDate: Date;
-    public sessionTime: string;
+let viewModel: CounselingViewModel;
 
-    constructor() {
-        super();
-        this.loadCounselingSessions();
+export function onNavigatingTo(args: EventData) {
+    const page = <Page>args.object;
+    viewModel = new CounselingViewModel();
+    page.bindingContext = viewModel;
+}
+
+export function onViewDetails(args: EventData) {
+    const session = (<any>args.object).bindingContext;
+    console.log(`Viewing details for session: ${session.details}`);
+}
+
+export function onNewSessionTap() {
+    viewModel.showBookingForm = true;
+}
+
+export function onBookSession() {
+    if (viewModel.sessionDate && viewModel.sessionTime) {
+        console.log(`Session booked for ${viewModel.sessionDate.toDateString()} at ${viewModel.sessionTime}`);
+        viewModel.showBookingForm = false;
+        viewModel['loadCounselingSessions'](); // Call private method
     }
+}
 
-    private loadCounselingSessions() {
-        this.counselingSessions = [
-            { date: '2025-04-10', time: '10:00 AM', details: 'Session with Dr. Smith' },
-            { date: '2025-04-12', time: '2:00 PM', details: 'Session with Dr. Johnson' },
-            { date: '2025-04-15', time: '9:00 AM', details: 'Session with Dr. Davis' },
-            // Add more sessions maybe
-        ];
-    }
-
-    public onViewDetails(session: any) {
-        console.log(`Viewing details for session: ${session.details}`);
-    }
-
-    public onNewSessionTap() {
-        this.showBookingForm = true;
-    }
-
-    public onBookSession() {
-        if (this.sessionDate && this.sessionTime) {
-            console.log(`Session booked for ${this.sessionDate.toDateString()} at ${this.sessionTime}`);
-            this.showBookingForm = false;
-            this.loadCounselingSessions(); 
-        }
-    }
-
-    public onCancelBooking() {
-        this.showBookingForm = false;
-    }
+export function onCancelBooking() {
+    viewModel.showBookingForm = false;
 }
 

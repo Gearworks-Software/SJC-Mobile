@@ -1,27 +1,30 @@
-<GridLayout rows="auto, *, auto" columns="*" padding="20">
-    <Label text="Counseling Sessions" class="h2" row="0" horizontalAlignment="center" />
+<Page class="page" xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Counseling" class="action-bar" />
+    <GridLayout rows="auto, *, auto" columns="*" padding="20">
+        <Label text="Counseling Sessions" class="h2" row="0" horizontalAlignment="center" />
 
-    <ListView items="{{ counselingSessions }}" row="1" visibility="{{ showBookingForm ? 'collapsed' : 'visible' }}">
-        <ng-template let-item="item">
-            <StackLayout>
-                <Label text="{{ item.date }}" class="session-date" />
-                <Label text="{{ item.time }}" class="session-time" />
-                <Button text="View Details" class="btn-primary" (tap)="onViewDetails(item)" />
-            </StackLayout>
-        </ng-template>
-    </ListView>
+        <ListView items="{{ counselingSessions }}" row="1" visibility="{{ showBookingForm ? 'collapsed' : 'visible' }}">
+            <ListView.itemTemplate class="counselling-item">
+                <StackLayout>
+                    <Label text="{{ date }}" class="session-date" />
+                    <Label text="{{ time }}" class="session-time" />
+                    <Button text="View Details" class="btn-primary" tap="onViewDetails(item)" />
+                </StackLayout>
+            </ListView.itemTemplate>
+        </ListView>
 
-    <StackLayout row="1" visibility="{{ showBookingForm ? 'visible' : 'collapsed' }}">
-        <Label text="Book a Counseling Session" class="h2" horizontalAlignment="center" />
-        
-        <DatePicker id="sessionDate" />
+        <StackLayout row="1" visibility="{{ showBookingForm ? 'visible' : 'collapsed' }}">
+            <Label text="Book a Counseling Session" class="h2" horizontalAlignment="center" />
+            
+            <DatePicker id="sessionDate" />
 
-        <TimePicker id="sessionTime" />
+            <TimePicker id="sessionTime" />
 
-        <Button text="Book Session" (tap)="onBookSession()" class="btn-primary" />
-        <Button text="Cancel" (tap)="onCancelBooking()" class="btn-secondary" />
-    </StackLayout>
+            <Button text="Book Session" tap="onBookSession" class="btn-primary" />
+            <Button text="Cancel" tap="onCancelBooking" class="btn-secondary" />
+        </StackLayout>
 
-    <Button text="Book New Session" row="2" (tap)="onNewSessionTap()" class="btn-secondary" visibility="{{ showBookingForm ? 'collapsed' : 'visible' }}" />
-</GridLayout>
+        <Button text="Book New Session" row="2" tap="onNewSessionTap" class="btn-secondary" visibility="{{ showBookingForm ? 'collapsed' : 'visible' }}" />
+    </GridLayout>
+</Page>
 
