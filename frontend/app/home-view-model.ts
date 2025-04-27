@@ -3,7 +3,6 @@ import { Frame } from '@nativescript/core';
 import { EventData } from '@nativescript/core';
 
 export class HomeViewModel extends Observable { 
-
   constructor() {
     super();
   }
@@ -12,9 +11,14 @@ export class HomeViewModel extends Observable {
     const frame = Frame.topmost();
     frame.navigate("counseling"); 
   }
+
+  public onEventCalendarTap(args: EventData) {
+    const frame = Frame.topmost();
+    frame.navigate("event-calendar");  
+  }
 }
 
 export function onNavigatingTo(args: EventData) {
   const page = args.object;
-  page.bindingContext = new HomeViewModel(); 
+  page.bindingContext = new HomeViewModel();
 }
