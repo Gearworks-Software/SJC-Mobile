@@ -21,3 +21,8 @@ export function onEventCalendarTap(args: EventData) {
     frame.navigate("event-calendar");
     console.log("event calendar");
   }
+
+  export function onCoursesTap(args: EventData) {
+    const frame = Frame.topmost();
+    frame.navigate("course-menu"); 
+}

@@ -7,7 +7,7 @@
             <Label text="Select a feature to begin:" class="subtitle" />
 
             <Button text="Profile" class="btn btn-primary" />
-            <Button text="Courses" class="btn btn-primary" />
+            <Button text="Courses" tap="onCoursesTap()" class="btn btn-primary" />
             <Button text="Campus Map" class="btn btn-primary" />
             <Button text="Event Calendar" tap="onEventCalendarTap" class="btn btn-primary" />
             <Button text="Counseling" class="btn btn-primary" tap="onCounselingTap" />
