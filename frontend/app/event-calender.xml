@@ -3,12 +3,12 @@
         <Label text="Event Calendar" class="h2" horizontalAlignment="center"/>
         
         <ListView id="calendar" items="{{ events }}" class="event-list">
-            <ng-template let-item="item">
+            <ListView.itemTemplate>
                 <StackLayout>
-                    <Label text="{{ item.date }}" class="event-date"/>
-                    <Label text="{{ item.event }}" class="event-description"/>
+                    <Label text="{{ date }}" class="event-date"/>
+                    <Label text="{{ event }}" class="event-description"/>
                 </StackLayout>
-            </ng-template>
+            </ListView.itemTemplate>
         </ListView>
     </StackLayout>
 </GridLayout>

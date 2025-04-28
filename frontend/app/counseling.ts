@@ -10,8 +10,8 @@ export function onNavigatingTo(args: EventData) {
 }
 
 export function onViewDetails(args: EventData) {
-    const session = (<any>args.object).bindingContext;
-    console.log(`Viewing details for session: ${session.details}`);
+    const sessionId = (<any>args.object).sessionId;
+    console.log(`Viewing details for session: ${sessionId} ${ viewModel.counselingSessions[sessionId].details }`);
 }
 
 export function onNewSessionTap() {

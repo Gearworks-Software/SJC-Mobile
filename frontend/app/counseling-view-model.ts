@@ -13,9 +13,9 @@ export class CounselingViewModel extends Observable {
 
     private loadCounselingSessions() {
         this.counselingSessions = [
-            { date: '2025-04-10', time: '10:00 AM', details: 'Session with Dr. Smith' },
-            { date: '2025-04-12', time: '2:00 PM', details: 'Session with Dr. Johnson' },
-            { date: '2025-04-15', time: '9:00 AM', details: 'Session with Dr. Davis' },
+            { session_id: "0", date: '2025-04-10', time: '10:00 AM', details: 'Session with Dr. Smith' },
+            { session_id: "1", date: '2025-04-12', time: '2:00 PM', details: 'Session with Dr. Johnson' },
+            { session_id: "2", date: '2025-04-15', time: '9:00 AM', details: 'Session with Dr. Davis' },
             // Add more sessions maybe
         ];
     }

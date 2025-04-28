@@ -8,7 +8,7 @@
                 <StackLayout>
                     <Label text="{{ date }}" class="session-date" />
                     <Label text="{{ time }}" class="session-time" />
-                    <Button text="View Details" class="btn-primary" tap="onViewDetails(item)" />
+                    <Button text="View Details" class="btn-primary" tap="onViewDetails" sessionId="{{ session_id }}" />
                 </StackLayout>
             </ListView.itemTemplate>
         </ListView>
