@@ -26,3 +26,10 @@ export function onEventCalendarTap(args: EventData) {
     const frame = Frame.topmost();
     frame.navigate("course-menu"); 
 }
+
+export function goToProfile() {
+    const frame = Frame.topmost();
+    frame.navigate({
+        moduleName: "profile", 
+    });
+}
