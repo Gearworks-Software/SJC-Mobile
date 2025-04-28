@@ -11,6 +11,7 @@
             <Button text="Campus Map" class="btn btn-primary" />
             <Button text="Event Calendar" tap="onEventCalendarTap" class="btn btn-primary" />
             <Button text="Counseling" class="btn btn-primary" tap="onCounselingTap" />
+            <Button text="Go to Profile" tap="goToProfile" class="btn btn-primary" />
             <!-- TODO, add Communication Tools, Notification Alerts, Cafeteria Menu, Academic Resources (tutorials, videos, etc), Counselling, Student organization, transport service, feedback -->
         </StackLayout>
     </ScrollView>
