@@ -1,5 +1,5 @@
 import { EventData, Page } from '@nativescript/core';
-import { CourseViewModel } from './course-view-model';
+import { CourseViewModel} from './course-view-model';
 
 let viewModel: CourseViewModel;
 
@@ -11,6 +11,13 @@ export function onNavigatingTo(args: EventData) {
 
 export function joinCourse(args) {
     const courseId = args.object.courseId;
-    console.log(`Joined course with ID: ${courseId}`);
-    // Add course joining logic
+    if(!courseId.isEnrolled)
+    {
+        courseId.isEnrolled = true;
+        courseId.studentsEnrolled += 1;
+        this.notifyPropertyChange('courses', this.courseId);
+        console.log(`Joined course with ID: ${courseId}`);
+    }else{
+        console.log(`Already enrolled in course: ${courseId}`);
+    }
 }
