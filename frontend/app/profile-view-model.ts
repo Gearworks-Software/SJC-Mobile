@@ -1,31 +1,31 @@
-import { Observable } from '@nativescript/core';
+import { Observable } from "@nativescript/core";
 
 export class ProfileViewModel extends Observable {
-    private _user: any;
+    private user: any;
 
     constructor() {
         super();
-        this._user = {
-            name: "John Doe",
-            email: "john.doe@example.com",
-            phone: "+123456789",
+        this.user = {
+            username: "john_doe",
+            password: "********",
             courses: [
-                { courseName: "Intro to Programming" },
-                { courseName: "Data Structures" }
+                { courseName: "Introduction to NativeScript" },
+                { courseName: "Advanced JavaScript" },
             ],
             preferences: {
                 language: "English",
-                notifications: true
-            }
+                notifications: true,
+                theme: "Dark",
+            },
         };
     }
 
-    get user() {
-        return this._user;
+    get userData() {
+        return this.user;
     }
 
-    onEditProfile() {
-        alert("Edit profile functionality coming soon!");
+    set userData(value: any) {
+        this.user = value;
+        this.notifyPropertyChange("user", value);
     }
 }
-
