@@ -1,11 +1,11 @@
 import { Observable } from "@nativescript/core";
 
 export class ProfileViewModel extends Observable {
-    private user: any;
+    private _user: any;
 
     constructor() {
         super();
-        this.user = {
+        this._user = {
             username: "john_doe",
             password: "********",
             courses: [
@@ -20,12 +20,17 @@ export class ProfileViewModel extends Observable {
         };
     }
 
-    get userData() {
-        return this.user;
+    get user() {
+        return this._user;
     }
 
-    set userData(value: any) {
-        this.user = value;
+    set user(value: any) {
+        this._user = value;
         this.notifyPropertyChange("user", value);
     }
+
+    get preferences() {
+        return this._user.preferences;
+    }
+
 }
