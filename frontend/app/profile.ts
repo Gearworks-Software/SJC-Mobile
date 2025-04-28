@@ -25,7 +25,6 @@ export class ProfileViewModel extends Observable {
     }
 
     onEditProfile() {
-        // Logic to edit profile
         alert("Edit profile functionality coming soon!");
     }
 }
