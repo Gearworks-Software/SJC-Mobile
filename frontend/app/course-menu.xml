@@ -1,17 +1,16 @@
 <Page class="page" xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
     <ActionBar title="Courses" class="action-bar" />
-    <ScrollView>
-        <StackLayout class="course-menu">
-            <ListView items="{{ courses }}">
-                <ListView.itemTemplate>
-                    <StackLayout class="course-card">
-                        <!-- <Image src="{{ imageUrl }}" /> -->
-                        <Label text="{{ title }}" class="course-title" />
-                        <Label text="{{ description }}" class="course-description" />
-                        <Button text="Join" tap="joinCourse" courseId=" {{ course_id }} " class="btn-primary" />
-                    </StackLayout>
-                </ListView.itemTemplate>
-            </ListView>
-        </StackLayout>
-    </ScrollView>
+
+    <!-- <StackLayout class="course-menu"> -->
+        <ListView items="{{ courses }}">
+            <ListView.itemTemplate>
+                <StackLayout class="course-card">
+                    <!-- <Image src="{{ imageUrl }}" /> -->
+                    <Label text="{{ title }}" class="course-title" />
+                    <Label text="{{ description }}" class="course-description" />
+                    <Button text="Join" tap="joinCourse" courseId=" {{ course_id }} " class="btn-primary" />
+                </StackLayout>
+            </ListView.itemTemplate>
+        </ListView>
+    <!-- </StackLayout> -->
 </Page>
