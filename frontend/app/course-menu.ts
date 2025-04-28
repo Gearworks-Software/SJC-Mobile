@@ -8,3 +8,9 @@ export function onNavigatingTo(args: EventData) {
     viewModel = new CourseViewModel();
     page.bindingContext = viewModel;
 }
+
+export function joinCourse(args) {
+    const courseId = args.object.courseId;
+    console.log(`Joined course with ID: ${courseId}`);
+    // Add course joining logic
+}

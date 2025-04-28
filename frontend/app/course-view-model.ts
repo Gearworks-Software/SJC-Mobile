@@ -1,5 +1,12 @@
 import { Observable } from '@nativescript/core';
-import { Course } from './course';
+
+interface Course {
+    course_id: string;
+    title: string;
+    description: string;
+    // imageUrl: string;
+    studentsEnrolled: number;
+}
 
 export class CourseViewModel extends Observable {
     public courses: Array<Course> = [];
@@ -11,14 +18,12 @@ export class CourseViewModel extends Observable {
 
     private loadCourses() {
         this.courses = [
-            { id: '1', title: 'Math 103', description: 'Intermediate Algebra', imageUrl: 'img/math.jpg', studentsEnrolled: 30 },
-            { id: '2', title: 'English 110', description: 'College Composition 1', imageUrl: 'img/english.jpg', studentsEnrolled: 25 },
-            // Add more courses 
+            { course_id: '0', title: 'ENG 110', description: 'College Composition I', studentsEnrolled: 25 },
+            { course_id: '1', title: 'MTH 103', description: 'Intermediate Algebra', studentsEnrolled: 30 },
+            { course_id: '2', title: 'PHIL 101', description: 'Philosophy of Ethics', studentsEnrolled: 18 },
+            { course_id: '3', title: 'SOC 121', description: 'Introduction to Research Methods', studentsEnrolled: 22 },
+            { course_id: '4', title: 'CIS 125', description: 'Principles of Programming I', studentsEnrolled: 20 },
+            { course_id: '5', title: 'COLL 101', description: 'College Seminar', studentsEnrolled: 30 }
         ];
-    }
-
-    public joinCourse(courseId: string) {
-        console.log(`Joined course with ID: ${courseId}`);
-        // Add course joining logic
     }
 }

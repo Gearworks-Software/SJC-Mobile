@@ -5,10 +5,10 @@
             <ListView items="{{ courses }}">
                 <ListView.itemTemplate>
                     <StackLayout class="course-card">
-                        <Image src="{{ imageUrl }}" />
+                        <!-- <Image src="{{ imageUrl }}" /> -->
                         <Label text="{{ title }}" class="course-title" />
                         <Label text="{{ description }}" class="course-description" />
-                        <Button text="Join" tap="{{ joinCourse }}" class="btn-primary" />
+                        <Button text="Join" tap="joinCourse" courseId=" {{ course_id }} " class="btn-primary" />
                     </StackLayout>
                 </ListView.itemTemplate>
             </ListView>
