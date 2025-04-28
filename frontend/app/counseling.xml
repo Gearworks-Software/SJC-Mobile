@@ -1,5 +1,6 @@
 <Page class="page" xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
     <ActionBar title="Counseling" class="action-bar" />
+    
     <GridLayout rows="auto, *, auto" columns="*" padding="20">
         <Label text="Counseling Sessions" class="h2" row="0" horizontalAlignment="center" />
 

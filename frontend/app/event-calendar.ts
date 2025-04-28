@@ -1,4 +1,3 @@
-import { Observable } from '@nativescript/core';
 import { EventData, Page } from '@nativescript/core';
 import { EventCalendarViewModel } from './event-calendar-view-model';
 
