@@ -1,1 +1,48 @@
+<Page class="page" xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <!-- ActionBar with title -->
+    <ActionBar title="User Profile" class="action-bar">
+        <!-- No action items are added here, but you could add them if necessary -->
+    </ActionBar>
+
+    <!-- Content of the page wrapped in ScrollView -->
+    <ScrollView>
+        <StackLayout class="profile-menu">
+            <!-- Personal Information Section -->
+            <StackLayout padding="15">
+                <Label text="Personal Information" class="h2" />
+                <Label text="Name: {{ user.name }}" class="profile-info" />
+                <Label text="Email: {{ user.email }}" class="profile-info" />
+                <Label text="Phone: {{ user.phone }}" class="profile-info" />
+            </StackLayout>
+
+            <!-- Course Enrollments Section -->
+            <StackLayout padding="15">
+                <Label text="Course Enrollments" class="h2" />
+                <ListView items="{{ user.courses }}">
+                    <ListView.itemTemplate>
+                        <StackLayout class="course-card">
+                            <Label text="{{ courseName }}" class="course-title" />
+                        </StackLayout>
+                    </ListView.itemTemplate>
+                </ListView>
+            </StackLayout>
+
+            <!-- Preferences Section -->
+            <StackLayout padding="15">
+                <Label text="Preferences" class="h2" />
+                <StackLayout orientation="horizontal">
+                    <Label text="Language: " />
+                    <Label text="{{ user.preferences.language }}" />
+                </StackLayout>
+                <StackLayout orientation="horizontal">
+                    <Label text="Notification: " />
+                    <Label text="{{ user.preferences.notifications ? 'Enabled' : 'Disabled' }}" />
+                </StackLayout>
+            </StackLayout>
+
+            <!-- Edit Profile Button -->
+            <Button text="Edit Profile" class="btn btn-primary" tap="onEditProfile" />
+        </StackLayout>
+    </ScrollView>
+</Page>
 
