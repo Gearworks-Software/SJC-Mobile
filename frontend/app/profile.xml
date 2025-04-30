@@ -1,52 +1,51 @@
 <Page class="page" xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
-    <ActionBar title="User Profile" class="action-bar">
-    </ActionBar>
+    <ActionBar title="User Profile" class="action-bar" />
 
     <ScrollView>
-        <StackLayout class="profile-menu">
-            <StackLayout padding="15">
-                <Label text="Username: {{ user.username }}" class="h2" />
+        <StackLayout class="profile-menu" padding="20" spacing="20">
+            
+    <StackLayout width="50%" class="input-field">
+        <Label text="Username" class="label" />
+        <TextField text="{{ user.username }}" hint="Enter username" class="profile-info" />
+    </StackLayout>
+
+
+            <StackLayout class="credentials-section" spacing="10">
+                <Label text="Credentials" class="h3" />
+
+                <StackLayout orientation="horizontal" horizontalAlignment="center" spacing="20">
+                    <StackLayout width="50%" class="input-field">
+                        <Label text="Username" class="label" />
+                        <Label text="{{ user.username }}" class="profile-info" />
+                    </StackLayout>
+
+                    <StackLayout width="50%" class="input-field">
+                        <Label text="Password" class="label" />
+                        <Label text="{{ user.password }}" class="profile-info" />
+                    </StackLayout>
+                </StackLayout>
             </StackLayout>
 
-            <StackLayout padding="15" orientation="horizontal">
-                <StackLayout class="input-field">
-                    <Label text="Username" />
-                    <Label text="{{ user.username }}" class="profile-info" />
-                </StackLayout>
-                <StackLayout class="input-field">
-                    <Label text="Password" />
-                    <Label text="{{ user.password }}" class="profile-info" />
-                </StackLayout>
-            </StackLayout>
-
-            <StackLayout padding="15">
+            <StackLayout class="enrollments-section" spacing="10">
                 <Label text="Course Enrollments" class="h2" />
                 <ListView items="{{ user.courses }}">
                     <ListView.itemTemplate>
-                        <StackLayout class="course-card">
+                        <StackLayout class="course-card" padding="10" marginBottom="5" backgroundColor="#f0f0f0" borderRadius="5">
                             <Label text="{{ courseName }}" class="course-title" />
                         </StackLayout>
                     </ListView.itemTemplate>
                 </ListView>
             </StackLayout>
 
-            <StackLayout padding="15">
+            <StackLayout class="preferences-section" spacing="5">
                 <Label text="Preferences" class="h2" />
-                <StackLayout orientation="horizontal">
-                    <Label text="Language: " />
-                    <Label text="{{ user.preferences.language }}" />
-                </StackLayout>
-                <StackLayout orientation="horizontal">
-                    <Label text="Notification: " />
-                    <Label text="{{ user.preferences.notifications ? 'Enabled' : 'Disabled' }}" />
-                </StackLayout>
-                <StackLayout orientation="horizontal">
-                    <Label text="Theme: " />
-                    <Label text="{{ user.preferences.theme }}" />
-                </StackLayout>
+
+                <Label text="Language: {{ user.preferences.language }}" />
+                <Label text="Notification: {{ user.preferences.notifications ? 'Enabled' : 'Disabled' }}" />
+                <Label text="Theme: {{ user.preferences.theme }}" />
             </StackLayout>
 
-            <Button text="Edit Profile" class="btn btn-primary" tap="onEditProfile" />
+            <Button text="Edit Profile" class="btn btn-primary" tap="onEditProfile" marginTop="20" />
         </StackLayout>
     </ScrollView>
 </Page>
