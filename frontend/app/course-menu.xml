@@ -1,15 +1,33 @@
 <Page class="page" xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
-    <ActionBar title="Courses" class="action-bar" />
 
-    <!-- <StackLayout class="course-menu"> -->
-        <ListView items="{{ courses }}">
-            <ListView.itemTemplate>
-                <StackLayout class="course-card">
-                    <!-- <Image src="{{ imageUrl }}" /> -->
-                    <Label text="{{ title }}" class="course-title" />
-                    <Label text="{{ description }}" class="course-description" />
+    <ActionBar title="Courses" class="action-bar" />
+    <ListView items="{{ courses }}" itemTap="{{ onCourseTap }}">
+        <ListView.itemTemplate>
+            <StackLayout class="course-card">
+                <Label text="{{ title + ' (Section ' + section + ')' }}" class="course-title" />
+                <Label text="{{ description }}" class="course-description" />
+                <Label text="Average: {{ average }}" class="course-average" />
+
+                <StackLayout visibility="{{ isExpanded ? 'visible' : 'collapse' }}">
+                    <Label text="Completed Assignments:"/>
+                    <StackLayout>
+                        <Repeater items="{{ completedAssignments }}">
+                            <Repeater.itemTemplate>
+                                <Label text="{{ name + ': ' + grade }}"/>
+                            </Repeater.itemTemplate>
+                        </Repeater>
+                    </StackLayout>
+
+                    <Label text="To Do:"/>
+                    <StackLayout>
+                        <Repeater items="{{ todoAssignments }}">
+                            <Repeater.itemTemplate>
+                                <Label text="{{ name + ': ' + grade }}"/>
+                            </Repeater.itemTemplate>
+                        </Repeater>
+                    </StackLayout>
                 </StackLayout>
-            </ListView.itemTemplate>
-        </ListView>
-    <!-- </StackLayout> -->
+            </StackLayout>
+        </ListView.itemTemplate>
+    </ListView>
 </Page>
