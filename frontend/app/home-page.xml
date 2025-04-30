@@ -9,6 +9,7 @@
             <Button text="Profile" tap="onProfileTap" class="btn btn-primary" />
             <Button text="Courses" tap="onCoursesTap" class="btn btn-primary" />
             <Button text="Event Calendar" tap="onEventCalendarTap" class="btn btn-primary" />
+            <Button text="Cafeteria Menu" tap="onCafeteriaMenuTap" class="btn btn-primary" />
             <Button text="Counseling" class="btn btn-primary" tap="onCounselingTap" />
             <!-- TODO, add Communication Tools, Notification Alerts, Cafeteria Menu, Academic Resources (tutorials, videos, etc), Counselling, Student organization, transport service, feedback -->
         </StackLayout>

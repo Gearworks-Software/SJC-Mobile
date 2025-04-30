@@ -14,4 +14,5 @@ export function onCourseTap(args) {
     const tappedCourse = viewModel.courses[index];
     tappedCourse.isExpanded = !tappedCourse.isExpanded;
     viewModel.notifyPropertyChange("courses", viewModel.courses);
+    console.log("coursetap")
 }

@@ -1,16 +1,17 @@
 <Page class="page" xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
 
     <ActionBar title="Courses" class="action-bar" />
-    <ListView items="{{ courses }}" itemTap="{{ onCourseTap }}">
+    <ListView items="{{ courses }}" itemTap="onCourseTap">
         <ListView.itemTemplate>
             <StackLayout class="course-card">
                 <Label text="{{ title + ' (Section ' + section + ')' }}" class="course-title" />
                 <Label text="{{ description }}" class="course-description" />
-                <Label text="Average: {{ average }}" class="course-average" />
+                <Label text="{{ 'Average: ' + average || 'N/A'}}" class="course-average" />
 
-                <StackLayout visibility="{{ isExpanded ? 'visible' : 'collapse' }}">
+                <StackLayout> <!--visibility="{{ isExpanded ? 'visible' : 'collapse' }}">-->
                     <Label text="Completed Assignments:"/>
                     <StackLayout>
+                        <!-- <Label text="{{ isExpanded }}"/> -->
                         <Repeater items="{{ completedAssignments }}">
                             <Repeater.itemTemplate>
                                 <Label text="{{ name + ': ' + grade }}"/>

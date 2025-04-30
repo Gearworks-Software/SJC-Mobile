@@ -7,7 +7,7 @@ export class ProfileViewModel extends Observable {
         super();
         this._user = {
             username: "john_doe",
-            password: "********",
+            password: "******",
             courses: [
                 { courseName: "Introduction to NativeScript" },
                 { courseName: "Advanced JavaScript" },
@@ -15,7 +15,7 @@ export class ProfileViewModel extends Observable {
             preferences: {
                 language: "English",
                 notifications: true,
-                theme: "Dark",
+                theme: "Light",
             },
         };
     }

@@ -28,21 +28,21 @@
 
             <StackLayout class="enrollments-section" spacing="10">
                 <Label text="Course Enrollments" class="h2" />
-                <ListView items="{{ user.courses }}">
-                    <ListView.itemTemplate>
+                <Repeater items="{{ user.courses }}">
+                    <Repeater.itemTemplate>
                         <StackLayout class="course-card" padding="10" marginBottom="5" backgroundColor="#f0f0f0" borderRadius="5">
                             <Label text="{{ courseName }}" class="course-title" />
                         </StackLayout>
-                    </ListView.itemTemplate>
-                </ListView>
+                    </Repeater.itemTemplate>
+                </Repeater>
             </StackLayout>
 
             <StackLayout class="preferences-section" spacing="5">
                 <Label text="Preferences" class="h2" />
 
-                <Label text="Language: {{ user.preferences.language }}" />
-                <Label text="Notification: {{ user.preferences.notifications ? 'Enabled' : 'Disabled' }}" />
-                <Label text="Theme: {{ user.preferences.theme }}" />
+                <Label text="{{ 'Language: ' + user.preferences.language }}" />
+                <Label text="{{ 'Notification: ' + (user.preferences.notifications ? 'Enabled' : 'Disabled') }}" />
+                <Label text="{{ 'Theme: ' + user.preferences.theme }}" />
             </StackLayout>
 
             <Button text="Edit Profile" class="btn btn-primary" tap="onEditProfile" marginTop="20" />
