@@ -8,16 +8,3 @@ export function onNavigatingTo(args: EventData) {
     viewModel = new CourseViewModel();
     page.bindingContext = viewModel;
 }
-
-export function joinCourse(args) {
-    const courseId = args.object.courseId;
-    if(!courseId.isEnrolled)
-    {
-        courseId.isEnrolled = true;
-        courseId.studentsEnrolled += 1;
-        this.notifyPropertyChange('courses', this.courseId);
-        console.log(`Joined course with ID: ${courseId}`);
-    }else{
-        console.log(`Already enrolled in course: ${courseId}`);
-    }
-}

@@ -8,7 +8,6 @@
                     <!-- <Image src="{{ imageUrl }}" /> -->
                     <Label text="{{ title }}" class="course-title" />
                     <Label text="{{ description }}" class="course-description" />
-                    <Button text="Join" tap="joinCourse" courseId=" {{ course_id }} " class="btn-primary" />
                 </StackLayout>
             </ListView.itemTemplate>
         </ListView>
