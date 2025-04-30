@@ -24,6 +24,10 @@
     color: #080262;
 }
 
+.welcome {
+    font-size: 30;
+}
+
 .label-primary {
     font-size: 16;
     font-weight: bold;
