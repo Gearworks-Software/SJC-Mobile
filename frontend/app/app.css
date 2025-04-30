@@ -1,39 +1,110 @@
 ﻿@import '@nativescript/theme/css/core.css';
 @import '@nativescript/theme/css/default.css';
 
-Button.-primary {
-  font-size: 18;
+/* General Page Styling */
+.page {
+    background-color: #f9f9f9;
 }
 
-.course-menu {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
+/* ActionBar Styling */
+.action-bar {
+    background-color: #080262;
+    color: white;
+    font-size: 20;
+    font-weight: bold;
 }
 
-.course-card {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  margin: 10px;
-  padding: 15px;
-  text-align: center;
+/* Form Container Styling */
+.form-container {
+    padding: 20;
+    width: 90%;
+    background-color: white;
+    border-radius: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.course-card img {
-  width: 100%;
-  border-radius: 8px;
+/* Logo Styling */
+.logo {
+    width: 120;
+    height: 120;
+    margin-bottom: 20;
+    border-radius: 60;
+    border-width: 2;
+    border-color: #080262;
 }
 
-.course-title {
-  font-size: 18px;
-  font-weight: bold;
+/* Input Fields Styling */
+.input {
+    margin: 10 0;
+    padding: 10;
+    border-width: 1;
+    border-color: #080262;
+    border-radius: 5;
+    background-color: #f0f8ff;
+    font-size: 16;
 }
 
-.course-description {
-  font-size: 14px;
-  color: #666;
+/* Button Styling */
+.btn-primary {
+    background-color: #080262;
+    color: white;
+    border-radius: 5;
+    padding: 10;
+    font-size: 16;
+    font-weight: bold;
 }
 
-.course-card.enrolled {
-  background-color: #d4edda;
+.btn-secondary {
+    background-color: #e0e0e0;
+    color: #080262;
+    border-radius: 5;
+    padding: 10;
+    font-size: 16;
+    font-weight: bold;
+}
+
+/* ListView Styling */
+.event-list, .course-menu {
+    margin: 10;
+    border-radius: 8;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.event-date, .course-title {
+    font-size: 18;
+    font-weight: bold;
+    color: #080262;
+}
+
+.event-description, .course-description {
+    font-size: 14;
+    color: #666;
+}
+
+/* Profile Section Styling */
+.profile-menu {
+    padding: 20;
+    background-color: white;
+    border-radius: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info {
+    font-size: 16;
+    color: #080262;
+}
+
+/* Miscellaneous */
+.h2 {
+    font-size: 20;
+    font-weight: bold;
+    color: #080262;
+    margin-bottom: 10;
+}
+
+.welcome, .subtitle {
+    font-size: 18;
+    color: #080262;
+    text-align: center;
 }
