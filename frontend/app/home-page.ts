@@ -27,7 +27,7 @@ export function onEventCalendarTap(args: EventData) {
     frame.navigate("course-menu"); 
 }
 
-export function goToProfile() {
+export function onProfileTap() {
     const frame = Frame.topmost();
     frame.navigate({
         moduleName: "profile", 

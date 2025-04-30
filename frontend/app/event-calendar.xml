@@ -1,0 +1,16 @@
+<Page class="page" xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Event Calendar" class="action-bar" />
+    <GridLayout rows="*, 5*" columns="*">
+        <Label row="0" col="0" text="Event Calendar" class="h2" horizontalAlignment="center"/>
+
+        <ListView row="1" col="0" id="calendar" items="{{ events }}" class="event-list">
+            <ListView.itemTemplate>
+                <StackLayout>
+                    <Label text="{{ date }}" class="event-date"/>
+                    <Label text="{{ event }}" class="event-description"/>
+                </StackLayout>
+            </ListView.itemTemplate>
+        </ListView>
+    </GridLayout>
+</Page>
+

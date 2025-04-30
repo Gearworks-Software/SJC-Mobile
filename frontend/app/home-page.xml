@@ -6,12 +6,10 @@
             <Label text="Welcome to the SJC-JC App!" class="welcome" />
             <Label text="Select a feature to begin:" class="subtitle" />
 
-            <Button text="Profile" class="btn btn-primary" />
+            <Button text="Profile" tap="onProfileTap" class="btn btn-primary" />
             <Button text="Courses" tap="onCoursesTap" class="btn btn-primary" />
-            <Button text="Campus Map" class="btn btn-primary" />
             <Button text="Event Calendar" tap="onEventCalendarTap" class="btn btn-primary" />
             <Button text="Counseling" class="btn btn-primary" tap="onCounselingTap" />
-            <Button text="Go to Profile" tap="goToProfile" class="btn btn-primary" />
             <!-- TODO, add Communication Tools, Notification Alerts, Cafeteria Menu, Academic Resources (tutorials, videos, etc), Counselling, Student organization, transport service, feedback -->
         </StackLayout>
     </ScrollView>
