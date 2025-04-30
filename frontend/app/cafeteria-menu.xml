@@ -1,0 +1,20 @@
+<Page class="page"
+    xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Cafeteria Menu" class="action-bar" />
+
+    <ListView items="{{ menu }}">
+        <ListView.itemTemplate>
+            <StackLayout class ="cafeteria-menu" orientation="horizontal" class="container">
+                <Label text="{{ day }}" class="day-label" />
+                <Repeater items="{{ items }}">
+                    <Repeater.itemTemplate>
+                        <StackLayout>
+                            <Label text="{{ name }}" class="cafeteria-item-name" textWrap="true" />
+                            <Label text="{{ description }}" class="cafeteria-item-description" textWrap="true"/>
+                        </StackLayout>
+                    </Repeater.itemTemplate>
+                </Repeater>
+            </StackLayout>
+        </ListView.itemTemplate>
+    </ListView>
+</Page>
